@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Користувачі</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <h2>Список зареєстрованих користувачів</h2>
+        <ul>
+            {% for user in users %}
+                <li><b>{{ user.name }}</b> ({{ user.email }}): {{ user.message }}</li>
+            {% else %}
+                <li>Поки що немає зареєстрованих користувачів.</li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="btn">Повернутися на головну</a>
+    </div>
+</body>
+</html>

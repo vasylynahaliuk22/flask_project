@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Новини</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <h2>Останні новини проєкту</h2>
+        <ul>
+            {% for item in news_list %}
+                <li>
+                    <strong>{{ item.title }}</strong> <small>({{ item.date }})</small><br>
+                    {{ item.text }}
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="btn">Повернутися на головну</a>
+    </div>
+</body>
+</html>
